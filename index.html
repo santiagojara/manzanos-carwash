@@ -19,6 +19,7 @@
         background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
       }
     </style>
+    
     <style>
       /* Estilos para la ventana emergente */
       .modal {
@@ -952,6 +953,23 @@
       <h3 class="my-4 text-3xl leading-tight">
         Haz que tu vehículo luzca como nuevo con nuestros servicios a domicilio. Agenda tu lavado hoy y disfruta de la comodidad que mereces.
       </h3>
+
+      <form action="send_email.php" method="POST">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" required>
+    
+        <label for="email">Correo</label>
+        <input type="email" id="email" name="email" required>
+    
+        <label for="service">Servicio o Suscripción</label>
+        <input type="text" id="service" name="service" required placeholder="Escribe el servicio o suscripción">
+    
+        <label for="message">Mensaje (opcional)</label>
+        <textarea id="message" name="message" rows="4" placeholder="Escribe un mensaje opcional"></textarea>
+    
+        <button type="submit">Enviar</button>
+      </form>
+
       <button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
         Quiero el servicio!
       </button>
