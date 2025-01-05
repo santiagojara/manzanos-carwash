@@ -10,7 +10,7 @@
     <meta name="description" content="Simple landind page" />
     <meta name="keywords" content="" />
     <meta name="author" content="" />
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+        <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
     <!--Replace with your tailwind.css once created-->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
     <!-- Define your gradient here - use online tools to find a gradient matching your branding-->
@@ -19,7 +19,77 @@
         background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
       }
     </style>
-    
+    <style>
+      /* Contenedor del formulario */
+    .form-container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    /* Título del formulario */
+    .form-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Etiquetas */
+    label {
+      font-size: 14px;
+      color: #666666;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    /* Campos de entrada */
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #dddddd;
+      border-radius: 5px;
+      font-size: 14px;
+      color: #333333;
+      background-color: #f9f9f9;
+    }
+
+    /* Campos de entrada al enfocarse */
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #4CAF50;
+      box-shadow: 0 0 4px rgba(76, 175, 80, 0.5);
+      background-color: #ffffff;
+    }
+
+    /* Botón */
+    .form-button {
+      width: 100%;
+      padding: 10px 15px;
+      font-size: 16px;
+      color: #ffffff;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-button:hover {
+      background-color: #45a049;
+    }
+
+    .form-button:active {
+      background-color: #3d8b3e;
+    }
+    </style>
+
     <style>
       /* Estilos para la ventana emergente */
       .modal {
@@ -866,61 +936,6 @@
         </div>
       </div>
     </section>
-    <section id="equipo" class="bg-white border-b py-8">
-      <div class="container mx-auto flex flex-wrap pt-4 pb-12">
-        <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-          Equipo de Trabajo
-        </h2>
-        <div class="w-full mb-4">
-          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
-        </div>
-        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-          <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-              <div class="flex items-center justify-center">
-                <img src="img/lavadoexterior.jpg" alt="Imagen de ejemplo">
-              </div>
-              <br>
-              <div class="w-full font-bold text-xl text-gray-800 px-6">
-                Lavado Básico Exterior
-              </div>
-              <br>
-              <p class="text-gray-800 text-base px-6 mb-5 text-justify">
-                Limpieza exterior del auto con agua, jabón especializado, limpieza de vidrios y secado con microfibra, usando productos ecológicos.
-              </p>
-          </div>
-        </div>
-        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-          <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-              <div class="flex items-center justify-center">
-                <img src="img/lavadointerior.jpg" alt="Imagen de ejemplo">
-              </div>
-              <br>
-              <div class="w-full font-bold text-xl text-gray-800 px-6">
-                Lavado Interior y Aspirado
-              </div>
-              <br>
-              <p class="text-gray-800 text-base px-6 mb-5 text-justify">
-                Aspirado completo, limpieza de tableros y superficies interiores, con opción de eliminar manchas menores.
-              </p>
-          </div>
-        </div>
-        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-          <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-              <div class="flex items-center justify-center">
-                <img src="img/lavadocompleto.jpg" alt="Imagen de ejemplo">
-              </div>
-              <br>
-              <div class="w-full font-bold text-xl text-gray-800 px-6">
-                Lavado Completo (Exterior e Interior)
-              </div>
-              <br>
-              <p class="text-gray-800 text-base px-6 mb-5">
-                Combina el lavado exterior e interior, con aplicación de aromatizantes personalizados.
-              </p>
-          </div>
-        </div>
-      </div>
-    </section>
     <!-- Change the colour #f8fafc to match the previous section colour -->
     <svg class="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -953,146 +968,103 @@
       <h3 class="my-4 text-3xl leading-tight">
         Haz que tu vehículo luzca como nuevo con nuestros servicios a domicilio. Agenda tu lavado hoy y disfruta de la comodidad que mereces.
       </h3>
-
-      <form action="send_email.php" method="POST">
-        <label for="name">Nombre</label>
-        <input type="text" id="name" name="name" required>
     
-        <label for="email">Correo</label>
-        <input type="email" id="email" name="email" required>
+      <!-- Formulario centrado con etiquetas grandes y botón restaurado -->
+      <div class="flex justify-center">
+        <form class="justify-center w-full max-w-lg" action="send_email.php" method="POST">
+          <!-- Nombre -->
+          <label for="name" class="block text-gray-300 font-bold text-xl mb-2">Nombre</label>
+          <input class="form-control w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" type="text" id="name" name="name" placeholder="Tu nombre" required>
     
-        <label for="service">Servicio o Suscripción</label>
-        <input type="text" id="service" name="service" required placeholder="Escribe el servicio o suscripción">
+          <!-- Correo -->
+          <label for="email" class="block text-gray-300 font-bold text-xl mb-2 mt-4">Correo</label>
+          <input class="form-control w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" type="email" id="email" name="email" placeholder="Tu correo" required>
     
-        <label for="message">Mensaje (opcional)</label>
-        <textarea id="message" name="message" rows="4" placeholder="Escribe un mensaje opcional"></textarea>
+          <!-- Servicio o suscripción -->
+          <label for="service" class="block text-gray-300 font-bold text-xl mb-2 mt-4">Servicio o Suscripción</label>
+          <input class="form-control w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" type="text" id="service" name="service" placeholder="Tu servicio o suscripción" required>
     
-        <button type="submit">Enviar</button>
-      </form>
-
-      <button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-        Quiero el servicio!
-      </button>
+          <!-- Mensaje -->
+          <label for="message" class="block text-gray-300 font-bold text-xl mb-2 mt-4">Mensaje (opcional)</label>
+          <textarea class="form-control w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" id="message" name="message" rows="4" placeholder="Tu mensaje"></textarea>
+    
+          <!-- Botón -->
+          <button type="submit" class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+            Enviar
+          </button>
+        </form>
+      </div>
     </section>
+    
     <!--Footer-->
     <footer class="bg-white">
       <div class="container mx-auto px-8">
         <div class="w-full flex flex-col md:flex-row py-6">
+          <!-- Logo -->
           <div class="flex-1 mb-6 text-black">
             <a class="text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
-              <!--Icon from: http://www.potlabicons.com/ -->
               <svg
-            class="h-8 fill-current inline"
-            viewBox="0 0 64 64"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="Filled_outline" data-name="Filled outline">
-              <path d="m10 32-4 1c-2.031.531-3-.765-3-2v-2a2 2 0 0 1 2-2h6z" fill="#dd3e46" />
-              <path d="m54 32 4 1c2.031.531 3-.765 3-2v-2a2 2 0 0 0 -2-2h-6z" fill="#dd3e46" />
-              <path
-                d="m55 37h-46l2-22a4.29 4.29 0 0 1 4-4h34a4.29 4.29 0 0 1 4 4z"
-                fill="#c13340"
-              />
-              <path d="m51 37h-38l2-22h34z" fill="#87cee9" />
-              <path d="m27 19h10v4h-10z" fill="#394d5c" />
-              <path d="m31 15h2v4h-2z" fill="#f4f4e6" />
-              <path
-                d="m33.445 37.832-5.745-3.832h-11.7v-2h12a1.006 1.006 0 0 1 .555.168l6 4z"
-                fill="#394d5c"
-              />
-              <path
-                d="m50.445 37.832-5.745-3.832h-11.7v-2h12a1.006 1.006 0 0 1 .555.168l6 4z"
-                fill="#394d5c"
-              />
-              <path
-                d="m55 41v-4h-46v4a6 6 0 0 0 0 12h46a6 6 0 0 0 0-12z"
-                fill="#dd3e46"
-              />
-              <circle cx="9" cy="47" fill="#fcf05a" r="2" />
-              <circle cx="55" cy="47" fill="#fcf05a" r="2" />
-              <path
-                d="m49 53h-34v-6a12.677 12.677 0 0 0 -2-6h38a12.677 12.677 0 0 0 -2 6z"
-                fill="#394d5c"
-              />
-              <path d="m24 48h16v2h-16z" fill="#cfdfe8" />
-              <path d="m24 44h16v2h-16z" fill="#cfdfe8" />
-              <path
-                d="m45.014 25.165-.861-5.165h-3.153v-2h4a1 1 0 0 1 .986.835l1 6z"
-                fill="#f4f4e6"
-              />
-              <path d="m45 27h2v2h-2z" fill="#f4f4e6" />
-              <path
-                d="m59 26h-4l-1-11.077a5.255 5.255 0 0 0 -5-4.923h-34a5.252 5.252 0 0 0 -5 4.91l-1 11.09h-4a3 3 0 0 0 -3 3v2a3.149 3.149 0 0 0 1.178 2.495 3.088 3.088 0 0 0 1.93.63 4.491 4.491 0 0 0 1.135-.155l2.075-.519-.318 3.459v.09 3.071a7 7 0 0 0 1 13.929h46a7 7 0 0 0 1-13.929v-3.071c0-.016 0-.075 0-.09l-.314-3.459 2.066.517a4.522 4.522 0 0 0 1.144.156 3.081 3.081 0 0 0 1.93-.629 3.149 3.149 0 0 0 1.174-2.495v-2a3 3 0 0 0 -3-3zm-47-10.923a3.313 3.313 0 0 1 3-3.077h34a3.317 3.317 0 0 1 3 3.09l1.905 20.91h-1.992l-1.913-21.09a1 1 0 0 0 -1-.91h-34a1 1 0 0 0 -1 .91l-1.913 21.09h-1.987zm22.3 20.923-5.748-3.832a1.006 1.006 0 0 0 -.552-.168h-12v2h11.7l3 2h-16.6l1.818-20h15.082v2h-4a1 1 0 0 0 -1 1v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-4a1 1 0 0 0 -1-1h-4v-2h15.087l1.728 19.008-4.26-2.84a1.006 1.006 0 0 0 -.555-.168h-12v2h11.7l3 2zm1.7-16v2h-8v-2zm-30.252 12.032a1.6 1.6 0 0 1 -1.348-.119 1.145 1.145 0 0 1 -.4-.913v-2a1 1 0 0 1 1-1h3.814l-.3 3.342zm10.252 19.968v-5a12 12 0 0 0 -1.3-5h34.6a12 12 0 0 0 -1.3 5v5zm44-5a5.006 5.006 0 0 1 -5 5h-5v-5a11.725 11.725 0 0 1 1.833-5.446 1 1 0 0 0 -.833-1.554h-38a1 1 0 0 0 -.832 1.555 11.647 11.647 0 0 1 1.832 5.445v5h-5a5 5 0 0 1 0-10 1 1 0 0 0 1-1v-3h44v3a1 1 0 0 0 1 1 5.006 5.006 0 0 1 5 5zm0-16a1.145 1.145 0 0 1 -.4.913 1.622 1.622 0 0 1 -1.357.117l-2.753-.688-.304-3.342h3.814a1 1 0 0 1 1 1z"
-              />
-              <path d="m9 44a3 3 0 1 0 3 3 3 3 0 0 0 -3-3zm0 4a1 1 0 1 1 1-1 1 1 0 0 1 -1 1z" />
-              <path d="m52 47a3 3 0 1 0 3-3 3 3 0 0 0 -3 3zm4 0a1 1 0 1 1 -1-1 1 1 0 0 1 1 1z" />
-              <path d="m24 48h16v2h-16z" />
-              <path d="m24 44h16v2h-16z" />
-              <path
-                d="m45.014 25.165 1.972-.33-1-6a1 1 0 0 0 -.986-.835h-4v2h3.153z"
-              />
-              <path d="m45 27h2v2h-2z" />
-            </g>
-          </svg>
+                class="h-8 fill-current inline"
+                viewBox="0 0 64 64"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <!-- Icono del auto -->
+                <g id="Filled_outline" data-name="Filled outline">
+                  <!-- Aquí va el SVG del auto -->
+                </g>
+              </svg>
               Manzano's Car Wash
             </a>
           </div>
+    
+          <!-- Contacto -->
           <div class="flex-1">
-            <p class="uppercase text-gray-500 md:mb-6">Links</p>
+            <p class="uppercase text-gray-500 md:mb-6">Contacto</p>
             <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">FAQ</a>
+              <li class="mt-2">
+                <a
+                  href="https://wa.me/593962887861"
+                  class="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  target="_blank"
+                >
+                  WhatsApp: +593 962 887 861
+                </a>
               </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Help</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Support</a>
+              <li class="mt-2">
+                <a
+                  href="mailto:manzanoscarwash@gmail.com"
+                  class="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                >
+                  Correo: manzanoscarwash@gmail.com
+                </a>
               </li>
             </ul>
           </div>
+    
+          <!-- Equipo -->
           <div class="flex-1">
-            <p class="uppercase text-gray-500 md:mb-6">Legal</p>
+            <p class="uppercase text-gray-500 md:mb-6">Equipo</p>
             <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Terms</a>
+              <li class="mt-2">
+                <span class="text-gray-800">Bryan Manzano</span>
               </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Privacy</a>
+              <li class="mt-2">
+                <span class="text-gray-800">Alexander Travez</span>
               </li>
-            </ul>
-          </div>
-          <div class="flex-1">
-            <p class="uppercase text-gray-500 md:mb-6">Social</p>
-            <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Facebook</a>
+              <li class="mt-2">
+                <span class="text-gray-800">Jerami Zamora
+                </span>
               </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Linkedin</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Twitter</a>
-              </li>
-            </ul>
-          </div>
-          <div class="flex-1">
-            <p class="uppercase text-gray-500 md:mb-6">Company</p>
-            <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Official Blog</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">About Us</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Contact</a>
+              <li class="mt-2">
+                <span class="text-gray-800">Michelle Balladares
+                </span>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </footer>
+    
     <!-- jQuery if you need it
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   -->
