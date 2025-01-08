@@ -971,23 +971,23 @@
     
       <!-- Formulario centrado con etiquetas grandes y botón restaurado -->
       <div class="flex justify-center">
-        <form class="justify-center w-full max-w-lg" action="./send_email.php" method="POST">
+        <form id="contact-form" class="justify-center w-full max-w-lg">
           <!-- Nombre -->
           <label for="name" class="block text-gray-300 font-bold text-xl mb-2">Nombre</label>
-          <input class="form-control w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" type="text" id="name" name="name" placeholder="Tu nombre" required>
-    
+          <input class="form-control w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" type="text" id="name" name="user_name" placeholder="Tu nombre" required>
+      
           <!-- Correo -->
           <label for="email" class="block text-gray-300 font-bold text-xl mb-2 mt-4">Correo</label>
-          <input class="form-control w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" type="email" id="email" name="email" placeholder="Tu correo" required>
-    
+          <input class="form-control w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" type="email" id="email" name="user_email" placeholder="Tu correo" required>
+      
           <!-- Servicio o suscripción -->
           <label for="service" class="block text-gray-300 font-bold text-xl mb-2 mt-4">Servicio o Suscripción</label>
           <input class="form-control w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" type="text" id="service" name="service" placeholder="Tu servicio o suscripción" required>
-    
+      
           <!-- Mensaje -->
           <label for="message" class="block text-gray-300 font-bold text-xl mb-2 mt-4">Mensaje (opcional)</label>
           <textarea class="form-control w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" id="message" name="message" rows="4" placeholder="Tu mensaje"></textarea>
-    
+      
           <!-- Botón -->
           <button type="submit" class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
             Enviar
@@ -1354,6 +1354,29 @@
             link.classList.add("font-bold", "text-blue-500"); // Agregar estilos activos
           }
         });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script>
+      (function() {
+        emailjs.init("OThCKkEI9EtYzYq3p"); // Reemplaza con tu Public Key de EmailJS
+      })();
+    
+      document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+    
+        const form = document.getElementById("contact-form");
+        const serviceID = "service_gdi47y8"; // Reemplaza con tu Service ID
+        const templateID = "template_vioed07"; // Reemplaza con tu Template ID
+    
+        emailjs.sendForm(serviceID, templateID, form)
+          .then(() => {
+            alert("Correo enviado exitosamente!");
+            form.reset();
+          }, (err) => {
+            alert("Error al enviar el correo. Intenta de nuevo.");
+            console.error("Error:", err);
+          });
       });
     </script>
   </body>
